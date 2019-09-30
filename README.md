@@ -18,7 +18,7 @@ This procedure explains how to install [MySQL](https://www.mysql.com) using [Hom
 To install MySQL enter : `$ brew install mysql`
   
 After the installation
-* Expected output: *
+* Expected output: 
 
 ```
 To connect run:
@@ -83,3 +83,6 @@ mysql>
 ### 1.2 Follow the steps in the ppt to know More.
 * Workbench PPT in repository
    
+
+## Install Mysql on Windows
+[Follow this youtube video for windows](https://www.youtube.com/watch?v=u96rVINbAUI)
