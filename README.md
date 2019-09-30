@@ -1,7 +1,8 @@
-# SE-Hands-On-lecture
+## SE-Hands-On-lecture
 Install Mysql &amp; Workbench
 
-## Install MySQL on macOS ===================================
+## Step 1. 
+## Install MySQL on macOS 
 This procedure explains how to install [MySQL](https://www.mysql.com) using [Homebrew](http://brew.sh) on macOS
 
 ### Install Homebrew
@@ -29,3 +30,45 @@ Or, if you don't want/need a background service you can just run:
   mysql.server start
 ```
 
+### Start MySQL Server
+
+* Enter the following command : `$ mysql.server start`  
+* Expected output: 
+```
+Starting MySQL
+.. SUCCESS!
+
+```
+
+### Setup Admin Password
+
+* Enter the following command : `mysqladmin -u root password 'root'`  
+* **Note:** I'm keeping it root for simplicity but you can use some other password as well.
+* Expected output: 
+```
+mysqladmin: [Warning] Using a password on the command line interface can be insecure.
+Warning: Since password will be sent to server in plain text, use ssl connection to ensure password safety.
+
+```
+
+### Connect to Mysql 
+* Enter the following command : `mysql -u root -p`  
+* **Note:** It will prompt you to enter your password, just enter your password provided in the previous step.
+* Expected output: 
+```
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.17 Homebrew
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+mysql>
+
+```
