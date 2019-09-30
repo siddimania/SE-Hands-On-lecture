@@ -2,15 +2,15 @@
 Install Mysql &amp; Workbench
 
 ## Step 1. 
-## Install MySQL on macOS 
+### 1.1 Install MySQL on macOS 
 This procedure explains how to install [MySQL](https://www.mysql.com) using [Homebrew](http://brew.sh) on macOS
 
-### Install Homebrew
+### 1.2 Install Homebrew
 * Installing Homebrew is effortless, open Terminal and enter :  
  `$  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * **Note:** Homebrew will download and install Command Line Tools for Xcode 8.0 as part of the installation process.
 
-### Install MySQL
+### 1.3 Install MySQL
 
 * Enter the following command : `$ brew info mysql`  
 * Expected output: **mysql: stable 8.0.17 (bottled)**
@@ -30,7 +30,7 @@ Or, if you don't want/need a background service you can just run:
   mysql.server start
 ```
 
-### Start MySQL Server
+### 1.4 Start MySQL Server
 
 * Enter the following command : `$ mysql.server start`  
 * Expected output: 
@@ -40,7 +40,7 @@ Starting MySQL
 
 ```
 
-### Setup Admin Password
+### 1.5 Setup Admin Password
 
 * Enter the following command : `mysqladmin -u root password 'root'`  
 * **Note:** I'm keeping it root for simplicity but you can use some other password as well.
@@ -51,7 +51,7 @@ Warning: Since password will be sent to server in plain text, use ssl connection
 
 ```
 
-### Connect to Mysql 
+### 1.6 Connect to Mysql 
 * Enter the following command : `mysql -u root -p`  
 * **Note:** It will prompt you to enter your password, just enter your password provided in the previous step.
 * Expected output: 
@@ -72,3 +72,14 @@ mysql>
 mysql>
 
 ```
+
+
+## Step 2. 
+### 1.1 Install Workbench
+[Download Link for Workbench](https://dev.mysql.com/downloads/workbench/)
+
+* It will download the dmg file of workbench, just install it will default config
+ 
+### 1.2 Follow the steps in the ppt to know More.
+* Workbench PPT in repository
+   
