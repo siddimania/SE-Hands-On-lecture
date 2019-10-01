@@ -86,3 +86,159 @@ mysql>
 
 ## Install Mysql on Windows
 [Follow this youtube video for windows](https://www.youtube.com/watch?v=u96rVINbAUI)
+
+
+## Mysql cheat sheet
+### Show Databases
+
+```sql
+SHOW DATABASES
+```
+
+### Create Database
+
+```sql
+CREATE DATABASE acme;
+```
+
+### Delete Database
+
+```sql
+DROP DATABASE acme;
+```
+
+### Select Database
+
+```sql
+USE acme;
+```
+
+### Create Table
+
+```sql
+CREATE TABLE users(
+id INT AUTO_INCREMENT,
+   first_name VARCHAR(100),
+   last_name VARCHAR(100),
+   email VARCHAR(50),
+   password VARCHAR(20),
+   location VARCHAR(100),
+   dept VARCHAR(100),
+   is_admin TINYINT(1),
+   register_date DATETIME,
+   PRIMARY KEY(id)
+);
+```
+
+### Delete / Drop Table
+
+```sql
+DROP TABLE tablename;
+```
+
+### Show Tables
+
+```sql
+SHOW TABLES;
+```
+
+### Insert Row / Record
+
+```sql
+INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Brad', 'Traversy', 'brad@gmail.com', '123456','Massachusetts', 'development', 1, now());
+```
+
+### Insert Multiple Rows
+
+```sql
+INSERT INTO users (first_name, last_name, email, password, location, dept,  is_admin, register_date) values ('Fred', 'Smith', 'fred@gmail.com', '123456', 'New York', 'design', 0, now()), ('Sara', 'Watson', 'sara@gmail.com', '123456', 'New York', 'design', 0, now()),('Will', 'Jackson', 'will@yahoo.com', '123456', 'Rhode Island', 'development', 1, now()),('Paula', 'Johnson', 'paula@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now()),('Tom', 'Spears', 'tom@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now());
+```
+
+### Select
+
+```sql
+SELECT * FROM users;
+SELECT first_name, last_name FROM users;
+```
+
+### Where Clause
+
+```sql
+SELECT * FROM users WHERE location='Massachusetts';
+SELECT * FROM users WHERE location='Massachusetts' AND dept='sales';
+SELECT * FROM users WHERE is_admin = 1;
+SELECT * FROM users WHERE is_admin > 0;
+```
+
+### Delete Row
+
+```sql
+DELETE FROM users WHERE id = 6;
+```
+
+### Update Row
+
+```sql
+UPDATE users SET email = 'freddy@gmail.com' WHERE id = 2;
+
+```
+
+### Add New Column
+
+```sql
+ALTER TABLE users ADD age VARCHAR(3);
+```
+
+### Modify Column
+
+```sql
+ALTER TABLE users MODIFY COLUMN age INT(3);
+```
+
+### Order By (Sort)
+
+```sql
+SELECT * FROM users ORDER BY last_name ASC;
+SELECT * FROM users ORDER BY last_name DESC;
+```
+
+### Concatenate Columns
+
+```sql
+SELECT CONCAT(first_name, ' ', last_name) AS 'Name', dept FROM users;
+
+```
+
+### Select Distinct Rows
+
+```sql
+SELECT DISTINCT location FROM users;
+
+```
+
+### Between (Select Range)
+
+```sql
+SELECT * FROM users WHERE age BETWEEN 20 AND 25;
+```
+
+### Like (Searching)
+
+```sql
+SELECT * FROM users WHERE dept LIKE 'd%';
+SELECT * FROM users WHERE dept LIKE 'dev%';
+SELECT * FROM users WHERE dept LIKE '%t';
+SELECT * FROM users WHERE dept LIKE '%e%';
+```
+
+### Not Like
+
+```sql
+SELECT * FROM users WHERE dept NOT LIKE 'd%';
+```
+
+### IN
+
+```sql
+SELECT * FROM users WHERE dept IN ('design', 'sales');
+```
