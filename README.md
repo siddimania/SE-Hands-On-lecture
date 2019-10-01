@@ -84,7 +84,7 @@ mysql>
 * Workbench PPT in repository
    
 
-## Install Mysql on Windows
+## Install Mysql & Workbench on Windows
 [Follow this youtube video for windows](https://www.youtube.com/watch?v=u96rVINbAUI)
 
 
@@ -241,4 +241,10 @@ SELECT * FROM users WHERE dept NOT LIKE 'd%';
 
 ```sql
 SELECT * FROM users WHERE dept IN ('design', 'sales');
+```
+
+
+## Some More examples 
+```
+https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.5/en/examples.html
 ```
