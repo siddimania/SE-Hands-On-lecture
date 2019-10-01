@@ -21,7 +21,7 @@ This procedure explains how to install [MySQL](https://www.mysql.com) using [Hom
 To install MySQL enter : `$ brew install mysql`
   
 After the installation
-* Expected output: 
+* Expected output (last lines of the output): 
 
 ```
 To connect run:
@@ -95,25 +95,25 @@ mysql>
 ### Show Databases
 
 ```sql
-SHOW DATABASES
+SHOW DATABASES;
 ```
 
 ### Create Database
 
 ```sql
-CREATE DATABASE acme;
+CREATE DATABASE customer;
 ```
 
 ### Delete Database
 
 ```sql
-DROP DATABASE acme;
+DROP DATABASE customer;
 ```
 
 ### Select Database
 
 ```sql
-USE acme;
+USE customer;
 ```
 
 ### Create Table
