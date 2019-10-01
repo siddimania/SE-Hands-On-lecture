@@ -12,8 +12,11 @@ This procedure explains how to install [MySQL](https://www.mysql.com) using [Hom
 
 ### 1.3 Install MySQL
 
-* Enter the following command : `$ brew info mysql`  
-* Expected output: **mysql: stable 8.0.17 (bottled)**
+* Enter the following command in your terminal : `$ brew info mysql`  
+* Expected output (first line of the output): 
+```
+** mysql: stable 8.0.17 (bottled) **
+```
 
 To install MySQL enter : `$ brew install mysql`
   
@@ -244,7 +247,7 @@ SELECT * FROM users WHERE dept IN ('design', 'sales');
 ```
 
 
-## Some More examples 
+## Some More examples that you can check out
 ```
 https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.5/en/examples.html
 ```
