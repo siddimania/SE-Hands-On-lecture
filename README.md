@@ -246,8 +246,64 @@ SELECT * FROM users WHERE dept NOT LIKE 'd%';
 SELECT * FROM users WHERE dept IN ('design', 'sales');
 ```
 
-
 ## Some More examples that you can check out
-```
-https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.5/en/examples.html
+[Download Link for Workbench](https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.5/en/examples.html)
+
+
+## Tutorial
+```sql
+** Create table and insert Values 
+
+CREATE TABLE STUDENTS(
+uga_id int,
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+age int,
+email VARCHAR(50),
+register_date DATE,
+PRIMARY KEY(uga_id)
+);
+
+INSERT INTO STUDENTS (uga_id, first_name, last_name, age, email, register_date) values 
+('8111169', 'Fred', 'Smith', '27', 'fred@gmail.com', '2018-01-07'), 
+('8112129', 'Sara', 'Watson', '20', 'sara@gmail.com', '2019-01-07'),
+('8113179', 'Will', 'Jackson', '22', 'will@yahoo.com', '2019-04-20'),
+('8117559', 'Paula', 'Johnson', '19', 'paula@yahoo.com', '2018-01-07'),
+('8119129', 'Tom', 'Spears', '23', 'tom@yahoo.com', '2017-05-07');
+
+CREATE TABLE STUDENTADDRESS(
+id INT AUTO_INCREMENT,
+uga_id int,
+address VARCHAR(100),
+PRIMARY KEY(id),
+FOREIGN KEY (uga_id) REFERENCES student(uga_id)
+);
+
+INSERT INTO STUDENTADDRESS (uga_id, address) values 
+('8111169', 'North Side View'), 
+('8112129', 'Lakeside View Point'),
+('8113179', 'River Drive'),
+('8117559', '5-Point View'),
+('8119129', 'Milege Avenue');
+
+CREATE TABLE COURSES(
+prefix VARCHAR(50),
+code INT,
+name VARCHAR(100),
+PRIMARY KEY(prefix, code)
+);
+
+INSERT INTO COURSES (prefix, code, name) values 
+('CSCI', '4760', 'Software Engineering'), 
+('AGRI', '6750', 'Soil Science'),
+('CSCI', '8770', 'Database Systems'),
+('EDU', '7750', 'English Literature'),
+('CHEM', '9110', 'BOOM BAAAM!');
+
+** Foreign Key Error
+INSERT INTO STUDENTADDRESS (uga_id, address) values ('8010169', 'North Side View');
+
+Workbench Response: 
+Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`cinemaebooking`.`studentaddress`, CONSTRAINT `studentaddress_ibfk_1` FOREIGN KEY (`uga_id`) REFERENCES `student` (`uga_id`))
+
 ```
