@@ -276,7 +276,7 @@ id INT AUTO_INCREMENT,
 uga_id int,
 address VARCHAR(100),
 PRIMARY KEY(id),
-FOREIGN KEY (uga_id) REFERENCES student(uga_id)
+FOREIGN KEY (uga_id) REFERENCES STUDENTS(uga_id)
 );
 
 INSERT INTO STUDENTADDRESS (uga_id, address) values 
@@ -306,4 +306,17 @@ INSERT INTO STUDENTADDRESS (uga_id, address) values ('8010169', 'North Side View
 Workbench Response: 
 Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`cinemaebooking`.`studentaddress`, CONSTRAINT `studentaddress_ibfk_1` FOREIGN KEY (`uga_id`) REFERENCES `student` (`uga_id`))
 
+
+** SHOW TABLE Queries
+
+SELECT * FROM STUDENTS;
+SELECT * FROM STUDENTADDRESS;
+SELECT * FROM COURSES;
+SELECT * FROM STUDENTS ORDER BY last_name ASC;
+SELECT * FROM STUDENTS WHERE age BETWEEN 20 AND 25;
+SELECT * FROM STUDENTS WHERE email LIKE '%gmail.com%';
+
+SELECT STUDENTS.uga_id, first_name, last_name, age, email, address FROM STUDENTS INNER JOIN STUDENTADDRESS
+ON STUDENTS.uga_id = STUDENTADDRESS.uga_id;
+  
 ```
