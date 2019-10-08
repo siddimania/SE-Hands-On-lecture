@@ -246,9 +246,14 @@ SELECT * FROM users WHERE dept NOT LIKE 'd%';
 SELECT * FROM users WHERE dept IN ('design', 'sales');
 ```
 
-## Some More examples that you can check out
-[Download Link for Workbench](https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.5/en/examples.html)
+## COMPLE LIST OF SQL COMMANDS
+[SQL COMMANDS](https://www.codecademy.com/articles/sql-commands)
 
+## Some More examples that you can check out
+[SOME MORE EXAMPLES](https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.5/en/examples.html)
+
+## Type of JOINS 
+[Type of JOINS](https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/)
 
 ## Tutorial
 ```sql
@@ -306,6 +311,7 @@ INSERT INTO STUDENTADDRESS (uga_id, address) values ('8010169', 'North Side View
 Workbench Response: 
 Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`cinemaebooking`.`studentaddress`, CONSTRAINT `studentaddress_ibfk_1` FOREIGN KEY (`uga_id`) REFERENCES `student` (`uga_id`))
 
+Explaination: Since we have uga_id as foreign key in STUDENTADDRESS, this contraint we only going to accept the values that are already present in STUDENTS table.
 
 ** SHOW TABLE Queries
 
@@ -320,3 +326,33 @@ SELECT STUDENTS.uga_id, first_name, last_name, age, email, address FROM STUDENTS
 ON STUDENTS.uga_id = STUDENTADDRESS.uga_id;
   
 ```
+
+## CLASS DOBUTS
+Q. We can't run multiple commands in a single workbench tab. 
+Ans: SQL commands are divided into `Data Definition Language(DDL)` and `Data Manipulation Language(DML)` commands.
+
+```
+Data Definition Language(DDL) – Consists of commands which are used to define the database.
+for eg. 
+CREATE
+DROP
+TRUNCATE
+ALTER
+BACKUP DATABASE
+
+
+Data Manipulation Language(DML) –  Consists of commands which are used to manipulate the data present in the database.
+USE
+INSERT INTO
+UPDATE
+DELETE
+SELECT
+```
+
+We run `Data Definition Language` commands only once since these are executed to create the schema(i.e database and tables).
+That's reason if we run `CREATE TABLE STUDENTS` again, it will give us an error saying that you already created this table.
+
+But we can run `Data Manipulation Language(DML)` commands in a single workbench tab as well, since we're only manipulating the data that is present in our tables.  
+
+ 
+
