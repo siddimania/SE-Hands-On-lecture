@@ -139,6 +139,12 @@ id INT AUTO_INCREMENT,
 DROP TABLE tablename;
 ```
 
+### Delete / Drop Table
+
+```sql
+TRUNCATE [TABLE] table_name;
+```
+
 ### Show Tables
 
 ```sql
